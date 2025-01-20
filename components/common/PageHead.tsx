@@ -21,7 +21,7 @@ export default function PageHead({ title, description }: PageHeadProps) {
                     />
                     <h3 className="font-bold">{title}</h3>
                 </div>
-                <p className="text-grayscale-50">{description}</p>
+                <p className="text-secondary-light">{description}</p>
             </div>
             <Separator />
         </div>
