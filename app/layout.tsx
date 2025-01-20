@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Rubik, Syne } from "next/font/google";
+import { Rubik, Syne, Inter } from "next/font/google";
 import Nav from "@/components/ui/Nav";
 import Footer from "@/components/ui/Footer";
 
@@ -11,6 +11,11 @@ const rubik = Rubik({
 
 const syne = Syne({
   variable: "--font-syne",
+  subsets: ["latin"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -27,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${rubik.variable} ${syne.variable} antialiased bg-secondary-black text-secondary-white`}
+        className={`${rubik.variable} ${syne.variable} ${inter.variable} antialiased bg-secondary-black text-secondary-white`}
       >
         <main className="max-w-[1146px] mx-auto">
           <Nav/>
