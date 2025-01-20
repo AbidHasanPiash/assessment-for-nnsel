@@ -1,7 +1,8 @@
-import Nav from "@/components/ui/Nav";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Rubik, Syne } from "next/font/google";
+import Nav from "@/components/ui/Nav";
+import Footer from "@/components/ui/Footer";
 
 const rubik = Rubik({
   variable: "--font-rubik",
@@ -26,10 +27,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${rubik.variable} ${syne.variable} antialiased bg-secondary-black text-secondary-white max-w-[1146px] mx-auto`}
+        className={`${rubik.variable} ${syne.variable} antialiased bg-secondary-black text-secondary-white`}
       >
-        <Nav/>
-        {children}
+        <main className="max-w-[1146px] mx-auto">
+          <Nav/>
+          {children}
+        </main>
+        <Footer/>
       </body>
     </html>
   );
