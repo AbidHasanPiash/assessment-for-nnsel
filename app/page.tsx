@@ -31,7 +31,19 @@ export default function Home() {
   return (
     <div className="space-y-40 py-40">
       <div className="flex flex-col space-y-20">
-        <h1 className="max-w-[891px] mx-auto text-center">Adaptive Logo Design for Your Brand</h1>
+
+        <div className="relative">
+          <Image
+            src={'/image/Blur-200-hero.png'}
+            width={517}
+            height={273}
+            alt="Blur-200"
+            className="absolute -top-[150px] right-0"
+          />
+          <h1 className="max-w-[891px] mx-auto text-center">Adaptive Logo Design for Your Brand</h1>
+        </div>
+
+
         <Button className="uppercase tracking-wider mx-auto">
           Explore works
           <Image src={'/icon/arrow-right.png'} width={16} height={10} alt="arrow-right" className="ml-2" />
@@ -40,7 +52,16 @@ export default function Home() {
 
       <div className="grid grid-cols-2">
         <div className="flex flex-col justify-center space-y-10">
-          <h3 className="font-bold">Let's get know <br /> about me closer</h3>
+          <div className="relative">
+            <Image
+              src={'/image/Blur-200-hero.png'}
+              width={517}
+              height={273}
+              alt="Blur-200"
+              className="absolute -top-[150px] -left-[150px]"
+            />
+            <h3 className="font-bold">Let's get know <br /> about me closer</h3>
+          </div>
           <p className="text-grayscale-50">
             Aaronn is a New York-based visual designer focusing on branding
             and visual identity. Her portfolio showcases her wide range of
@@ -59,7 +80,17 @@ export default function Home() {
 
       <div className="space-y-20">
         <div className="flex flex-col items-center justify-center space-y-20">
-          <h2 className="font-bold">My Projects Highlight</h2>
+
+          <div className="relative">
+            <Image
+              src={'/image/Blur-200.png'}
+              width={517}
+              height={273}
+              alt="Blur-200"
+              className="absolute -top-[150px] -right-[150px]"
+            />
+            <h2 className="font-bold">My Projects Highlight</h2>
+          </div>
           <Button variant="outlined" className="uppercase tracking-wider mx-auto">
             Explore More
             <Image src={'/icon/arrow-right.png'} width={16} height={10} alt="arrow-right" className="ml-2" />
@@ -94,7 +125,16 @@ export default function Home() {
 
         <div className="flex gap-10">
           <div className="space-y-10 w-fit pt-10">
+          <div className="relative">
+            <Image
+              src={'/image/Blur-200-hero.png'}
+              width={517}
+              height={273}
+              alt="Blur-200"
+              className="absolute -top-[150px] -left-[150px]"
+            />
             <h2 className="font-syne">Testimonial</h2>
+          </div>
             <p className="text-grayscale-50">
               “Aaronn was fantastic to work with from start to finish. We were looking for
               a simple, stand-out logo and he delivered. I tried designing the logo myself

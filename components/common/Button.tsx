@@ -18,10 +18,10 @@ export default function Button({
     <button
       onClick={onClick}
       className={cn(
-        "w-fit text-[13px] py-6 px-8 rounded-full flex items-center justify-center transition-all",
+        "w-fit text-[13px] text-white py-6 px-8 rounded-full flex items-center justify-center transition-all",
         variant === "solid"
-          ? "bg-brand text-white"
-          : "border border-brand text-brand",
+          ? "bg-brand"
+          : "border border-brand",
         className
       )}
     >
