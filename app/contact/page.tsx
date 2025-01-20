@@ -1,5 +1,6 @@
 'use client'
 import PageHead from '@/components/common/PageHead'
+import Image from 'next/image';
 import React from 'react'
 
 export default function ContactPage() {
@@ -34,6 +35,15 @@ export default function ContactPage() {
                         <p>Send</p>
                     </button>
                 </form>
+            </div>
+
+            <div>
+                <Image src={'/image/Cover-contact.png'} width={1148} height={765} alt="Cover-contact" />
+                <div className='flex items-center justify-between p-20 '>
+                    {['Street Avenue 21, CA', '+9 0283353', 'info@aaronn.com'].map(item=>(
+                        <h4 key={item}>{item}</h4>
+                    ))}
+                </div>
             </div>
 
         </div>
