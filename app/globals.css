@@ -31,3 +31,14 @@
     @apply text-[16px] font-rubik leading-snug font-medium;
   }
 }
+
+@layer utilities {
+  .text-outline {
+    color: transparent;
+    text-shadow: 
+      2px 2px 0 currentColor,
+      -2px 2px 0 currentColor,
+      2px -2px 0 currentColor,
+      -2px -2px 0 currentColor;
+  }
+}
