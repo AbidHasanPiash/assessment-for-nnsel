@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import Separator from '@/components/common/Separator'
 
 export default function Footer() {
     return (
@@ -26,7 +27,7 @@ export default function Footer() {
                             </div>
                         </div>
                     </div>
-                    <div className='w-full h-px bg-border'/>
+                    <Separator/>
                     <h4 className='font-syne text-center'>© 2023. Ideapeel. All rights reserved. </h4>
                 </div>
             </div>
