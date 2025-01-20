@@ -1,3 +1,4 @@
+import Nav from "@/components/ui/Nav";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Rubik, Syne } from "next/font/google";
@@ -25,8 +26,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${rubik.variable} ${syne.variable} antialiased`}
+        className={`${rubik.variable} ${syne.variable} antialiased bg-secondary-black text-secondary-white max-w-[1146px] mx-auto`}
       >
+        <Nav/>
         {children}
       </body>
     </html>
