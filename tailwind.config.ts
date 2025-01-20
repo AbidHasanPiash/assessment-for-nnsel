@@ -22,7 +22,7 @@ export default {
           light: '#696969',
           white: '#FFFFFF',
         },
-        greyscale: {
+        grayscale: {
           10: "#F9FAFB",
           20: "#F4F4F6",
           30: "#E5E6EB",
