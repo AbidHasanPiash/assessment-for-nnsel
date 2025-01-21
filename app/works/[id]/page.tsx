@@ -3,6 +3,8 @@ import { works } from "../page"
 import Image from "next/image";
 import ButtonNextWork from "@/components/common/ButtonNextWork";
 import ButtonPreviousWork from "@/components/common/ButtonPreviousWork";
+import WorkCard from "@/components/card/WorkCard";
+import WorkCardOthers from "@/components/card/WorkCardOthers";
 
 interface WorkProps {
     params: { id: string };
@@ -61,6 +63,15 @@ export default async function WorkDetailsPage({ params }: WorkProps) {
             <div className="flex items-center justify-between">
                 <ButtonPreviousWork id={id}/>
                 <ButtonNextWork id={id}/>
+            </div>
+
+            <div className="space-y-10">
+                <h2 className="text-center">Other Projects</h2>
+                <div className='grid grid-cols-3 gap-10'>
+                    {works?.slice(0, 3)?.map((work, index)=>(
+                        <WorkCardOthers key={index} work={work}/>
+                    ))}
+                </div>
             </div>
         </div>
     )
