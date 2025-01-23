@@ -31,7 +31,7 @@ export default async function WorkPage() {
         <div className="space-y-20 py-40">
             <PageHead title="My works" description="Showcase About Works" />
             <div className="grid grid-cols-6 gap-10">
-                {works.map((work, index) => (
+                {works && works.map((work, index) => (
                     <WorkCard
                         key={work.id}
                         work={work}
