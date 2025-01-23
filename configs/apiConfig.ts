@@ -1,14 +1,13 @@
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
-
+// const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const isServer = typeof window === 'undefined';
+const API_URL = isServer
+  ? process.env.API_URL // Server-side URL
+  : process.env.NEXT_PUBLIC_API_URL; // Client-side URL
 export default {
-    BASE_URL: `${BASE_URL}`,
+    BASE_URL: `${API_URL}`,
 
     //────────────────────────────────────────────
-    //? API: ---- Auth
+    //? API: ---- Work
     //────────────────────────────────────────────
-    MEMBER_LOGIN: '/auth/login',
-    ADMIN_LOGIN: '/auth/admin/login',
-    SUPER_ADMIN_LOGIN: '/auth/super-admin/login',
-
-    REFRESH_TOKEN: '/auth/refresh-token',
+    GET_WORK_LIST : '/work'
 }

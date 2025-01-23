@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Rubik, Syne, Inter } from "next/font/google";
 import Nav from "@/components/ui/Nav";
 import Footer from "@/components/ui/Footer";
+import Wrapper from "@/providers/Wrapper";
 
 const rubik = Rubik({
   variable: "--font-rubik",
@@ -31,14 +32,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${rubik.variable} ${syne.variable} ${inter.variable} antialiased bg-secondary-black text-secondary-white`}
-      >
-        <main className="max-w-[1146px] mx-auto">
-          <Nav/>
-          {children}
-        </main>
-        <Footer/>
+      <body className={`${rubik.variable} ${syne.variable} ${inter.variable} antialiased bg-secondary-black text-secondary-white`}>
+        <Wrapper>
+          <main className="max-w-[1146px] mx-auto">
+            <Nav />
+            {children}
+          </main>
+          <Footer />
+        </Wrapper>
       </body>
     </html>
   );
