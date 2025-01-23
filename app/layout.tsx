@@ -34,11 +34,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${rubik.variable} ${syne.variable} ${inter.variable} antialiased bg-secondary-black text-secondary-white`}>
         <Wrapper>
-          <main className="max-w-[1146px] mx-auto">
-            <Nav />
             {children}
-          </main>
-          <Footer />
         </Wrapper>
       </body>
     </html>
