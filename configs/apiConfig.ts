@@ -9,5 +9,6 @@ const API_URL = isServer
     //────────────────────────────────────────────
     //? API: ---- Work
     //────────────────────────────────────────────
-    GET_WORK_LIST : '/work'
+    GET_WORK_LIST : '/work',
+    GET_WORK_BY_ID : '/work/',
 }
