@@ -8,7 +8,6 @@ const axiosInstance = axios.create({
   timeout: 30000,
 });
 
-// Interceptor to add Authorization header
 axiosInstance.interceptors.request.use(
   async (config: InternalAxiosRequestConfig) => {
     if (config.headers) {
@@ -59,50 +58,12 @@ export const handleAxiosError = (error: unknown): void => {
   throw error; // Propagate the error for further handling
 };
 
-export const handleAxiosErrorAsServer = (error: unknown): null => {
-  if (axios.isCancel(error)) {
-    console.warn('Request was canceled.');
-    return null;
-  }
-
-  if ((error as AxiosError).code === 'ECONNABORTED') {
-    console.error('Request timed out. Please try again later.');
-    return null;
-  }
-
-  if (axios.isAxiosError(error)) {
-    const code = error.response?.status;
-    const errorMessage = error.response?.data?.message;
-
-    if (code === 404) {
-      console.warn(`Resource not found (404): ${errorMessage || 'No additional message'}`);
-      return null;
-    } else {
-      console.error(`Server error: ${code} - ${errorMessage}`);
-      return null;
-    }
-  } else {
-    console.error(`Unknown error: ${(error as Error).message}`);
-  }
-
-  throw error; // Propagate error if necessary
-};
-
 export async function fetchData(endpoint: string): Promise<any> {
   try {
     const response = await axiosInstance.get(endpoint);
     return response?.data;
   } catch (error) {
     handleAxiosError(error);
-  }
-}
-
-export async function fetchDataAsServer(endpoint: string): Promise<any> {
-  try {
-    const response = await axiosInstance.get(endpoint);
-    return response?.data;
-  } catch (error) {
-    handleAxiosErrorAsServer(error);
   }
 }
 
