@@ -2,6 +2,7 @@
 import apiConfig from '@/configs/apiConfig';
 import { fetchData } from '@/utils/axios.client';
 import { useQuery } from '@tanstack/react-query';
+import Link from 'next/link';
 import React from 'react'
 
 export default function AdminPage() {
@@ -36,7 +37,7 @@ export default function AdminPage() {
         <div className='container mx-auto'>
             <div className='flex items-center justify-between'>
                 <h2 className='text-brand'>Manage Works</h2>
-                <button className='p-1 rounded-md bg-brand hover:bg-opacity-80'>Create New</button>
+                <Link href={'admin/create'} className='p-1 rounded-md bg-brand hover:bg-opacity-80'>Create New</Link>
             </div>
 
             {isLoading ? <p>Loading..</p> :
