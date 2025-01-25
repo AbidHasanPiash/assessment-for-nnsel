@@ -1,13 +1,13 @@
 'use client'
 import apiConfig from '@/configs/apiConfig';
-import { fetchData } from '@/utils/axios.client';
+import { deleteData, fetchData } from '@/utils/axios.client';
 import { useQuery } from '@tanstack/react-query';
 import Link from 'next/link';
 import React from 'react'
 
 export default function AdminPage() {
 
-    const { isLoading, data } = useQuery({
+    const { isLoading, data, refetch } = useQuery({
         queryKey: ['works'],
         queryFn: () => fetchData(apiConfig?.GET_WORK_LIST),
     });
@@ -15,23 +15,24 @@ export default function AdminPage() {
     const handleEdit = (id: string) => {
         console.log('Edit:', id);
         // Add your edit logic here
-      };
-    
-      const handleDelete = (id: string) => {
-        console.log('Delete:', id);
-        // Add your delete logic here
-      };
+    };
 
-      const formatDate = (date: string) => {
+    const handleDelete = async (id: string) => {
+        console.log('Delete:', id);
+        await deleteData(apiConfig?.DELETE_WORK, id);
+        await refetch()
+    };
+
+    const formatDate = (date: string) => {
         return new Intl.DateTimeFormat('en-US', {
-          year: 'numeric',
-          month: 'short',
-          day: 'numeric',
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
         }).format(new Date(date));
-      };
+    };
 
     return (
         <div className='container mx-auto'>
@@ -60,12 +61,12 @@ export default function AdminPage() {
                                 <td className="border border-secondary-light px-4 py-2">{formatDate(work.updatedAt)}</td>
                                 <td className="border border-secondary-light px-4 py-2">
                                     <div className="flex space-x-4">
-                                        <button
-                                            onClick={() => handleEdit(work.id)}
+                                        <Link
+                                            href={`admin/edit/${work?.id}`}
                                             className="text-blue-500 hover:underline"
                                         >
                                             Edit
-                                        </button>
+                                        </Link>
                                         <button
                                             onClick={() => handleDelete(work.id)}
                                             className="text-red-500 hover:underline"

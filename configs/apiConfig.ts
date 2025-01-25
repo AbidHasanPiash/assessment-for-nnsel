@@ -11,7 +11,7 @@ const API_URL = isServer
     //────────────────────────────────────────────
     GET_WORK_LIST : '/work',
     GET_WORK_BY_ID : '/work/',
-    CREATE_WORK_BY_ID : '/work',
-    UPDATE_WORK_BY_ID : '/work/',
-    DELETE_WORK_BY_ID : '/work/',
+    CREATE_WORK : '/work',
+    UPDATE_WORK : '/work/',
+    DELETE_WORK : '/work/',
 }
